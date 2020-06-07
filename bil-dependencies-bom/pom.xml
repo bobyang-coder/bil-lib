@@ -82,7 +82,7 @@
         <!--任务调度-->
         <quartz.version>2.2.2</quartz.version>
         <!--rpc-->
-        <netty.version>4.0.46.Final</netty.version>
+        <netty.version>4.1.42.Final</netty.version>
         <!--序列化工具-->
         <protostuff.version>1.7.2</protostuff.version>
         <!--other-->

@@ -62,7 +62,7 @@
         <hikari.version>3.4.2</hikari.version>
         <!--MQ-->
         <kafka.version>0.10.2.1</kafka.version>
-        <activemq.version>5.15.3</activemq.version>
+        <activemq.version>5.15.9</activemq.version>
         <!--工作流-->
         <activiti.version>5.22.0</activiti.version>
         <!--数据库驱动-->

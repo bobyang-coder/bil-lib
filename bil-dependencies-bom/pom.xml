@@ -97,6 +97,8 @@
         <!--文件类-->
         <poi.version>3.17</poi.version>
         <jxls.version>2.4.6</jxls.version>
+        <!--二维码-->
+        <zxing.version>3.4.0</zxing.version>
     </properties>
 
     <!--管理jar包-->
@@ -462,6 +464,19 @@
                 <groupId>org.jxls</groupId>
                 <artifactId>jxls</artifactId>
                 <version>${jxls.version}</version>
+            </dependency>
+
+            <!-- 二维码 -->
+            <dependency>
+                <groupId>com.google.zxing</groupId>
+                <artifactId>core</artifactId>
+                <version>${zxing.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.google.zxing</groupId>
+                <artifactId>javase</artifactId>
+                <version>${zxing.version}</version>
             </dependency>
 
         </dependencies>

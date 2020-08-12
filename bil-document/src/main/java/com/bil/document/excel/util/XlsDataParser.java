@@ -1,4 +1,4 @@
-package com.bil.document.zip.util;
+package com.bil.document.excel.util;
 
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.Row;

@@ -66,7 +66,7 @@
         <!--工作流-->
         <activiti.version>5.22.0</activiti.version>
         <!--数据库驱动-->
-        <mysql.version>6.0.5</mysql.version>
+        <mysql.version>8.0.16</mysql.version>
         <!--nosql-->
         <jedis.version>3.2.0</jedis.version>
         <!--SQL解析-->
@@ -80,7 +80,7 @@
         <!--模板引擎-->
         <freemarker.version>2.3.23</freemarker.version>
         <!--任务调度-->
-        <quartz.version>2.2.2</quartz.version>
+        <quartz.version>2.3.2</quartz.version>
         <!--rpc-->
         <netty.version>4.1.42.Final</netty.version>
         <!--序列化工具-->

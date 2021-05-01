@@ -219,7 +219,8 @@ public class ZipProUtils {
 
     public static void main(String[] args) throws IOException {
         //ZipUtil.zip("D:/apache-tomcat-7.0.30", "d:/temp");
-        File zipFile = new File("D:/temp/apache-tomcat-7.0.30.zip");
-        ZipProUtils.unzip(zipFile, "d:/temp");
+//        File zipFile = new File("D:/temp/apache-tomcat-7.0.30.zip");
+//        ZipProUtils.unzip(zipFile, "d:/temp");
+        zip("/Users/haibo.yang/Documents/test","/Users/haibo.yang/Documents/");
     }
 }

@@ -24,6 +24,8 @@
 
     <!--管理jar包版本-->
     <properties>
+        <app.name>${project.artifactId}</app.name>
+        <java.version>1.8</java.version>
         <!--单元测试-->
         <junit.version>4.12</junit.version>
         <!-- 日志 -->
@@ -63,12 +65,14 @@
         <!--MQ-->
         <kafka.version>0.10.2.1</kafka.version>
         <activemq.version>5.15.9</activemq.version>
+        <rocketmq.version>4.5.2</rocketmq.version>
         <!--工作流-->
         <activiti.version>5.22.0</activiti.version>
         <!--数据库驱动-->
         <mysql.version>8.0.16</mysql.version>
         <!--nosql-->
         <jedis.version>3.2.0</jedis.version>
+        <redisson.version>3.11.5</redisson.version>
         <!--SQL解析-->
         <jsqlparser.version>0.9.1</jsqlparser.version>
         <!--搜索-->
@@ -91,7 +95,7 @@
         <cglib.version>3.1</cglib.version>
         <lombok.version>1.18.12</lombok.version>
         <!-- 字节码操作 -->
-        <javassist.version>3.22.0-GA</javassist.version>
+        <javassist.version>3.26.0-GA</javassist.version>
         <!-- http -->
         <okhttp.version>3.7.0</okhttp.version>
         <!--文件类-->
@@ -99,6 +103,12 @@
         <jxls.version>2.4.6</jxls.version>
         <!--二维码-->
         <zxing.version>3.4.0</zxing.version>
+        <!-- 表达式引擎 -->
+        <aviator.version>5.2.5</aviator.version>
+
+        <!-- 分布式配置 -->
+
+
     </properties>
 
     <!--管理jar包-->
@@ -479,7 +489,21 @@
                 <version>${zxing.version}</version>
             </dependency>
 
+            <!-- 表达式引擎 -->
+            <dependency>
+                <groupId>com.googlecode.aviator</groupId>
+                <artifactId>aviator</artifactId>
+                <version>${aviator.version}</version>
+            </dependency>
+
         </dependencies>
     </dependencyManagement>
+
+    <build>
+        <!-- maven 插件管理 -->
+        <pluginManagement>
+
+        </pluginManagement>
+    </build>
 
 </project>

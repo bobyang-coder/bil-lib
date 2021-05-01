@@ -1,6 +1,5 @@
 package com.bil.document.zip.util;
 
-import org.apache.commons.io.IOUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -14,71 +13,49 @@ import java.util.zip.GZIPOutputStream;
  * @author haibo.yang   <bobyang_coder@163.com>
  * @since 2020/08/12
  */
-public final class GzipUtil {
-    private static final Logger logger = LoggerFactory.getLogger(GzipUtil.class);
+public final class GzipUtils {
+    private static final Logger logger = LoggerFactory.getLogger(GzipUtils.class);
     public static final int BUFFER = 1024;
 
     public static byte[] compress(byte[] data) {
-        ByteArrayInputStream bais = new ByteArrayInputStream(data);
-        ByteArrayOutputStream baos = new ByteArrayOutputStream();
-        try {
+        try (ByteArrayInputStream bais = new ByteArrayInputStream(data);
+             ByteArrayOutputStream baos = new ByteArrayOutputStream()) {
             compress(bais, baos);
             return baos.toByteArray();
         } catch (IOException var7) {
-            logger.error("", var7);
-        } finally {
-            IOUtils.closeQuietly(bais);
-            IOUtils.closeQuietly(baos);
+            logger.error("压缩失败", var7);
         }
-
         return null;
     }
 
     public static byte[] decompress(byte[] data) {
-        ByteArrayInputStream bais = new ByteArrayInputStream(data);
-        ByteArrayOutputStream baos = new ByteArrayOutputStream();
-
-        try {
+        try (ByteArrayInputStream bais = new ByteArrayInputStream(data);
+             ByteArrayOutputStream baos = new ByteArrayOutputStream()) {
             decompress(bais, baos);
             return baos.toByteArray();
         } catch (IOException var7) {
-            logger.error("", var7);
-        } finally {
-            IOUtils.closeQuietly(bais);
-            IOUtils.closeQuietly(baos);
+            logger.error("解压失败", var7);
         }
         return new byte[0];
     }
 
     public static void compress(InputStream is, OutputStream os) throws IOException {
-        GZIPOutputStream gos = null;
-
-        try {
-            gos = new GZIPOutputStream(os);
-            byte[] data = new byte[1024];
-
+        try (GZIPOutputStream gos = new GZIPOutputStream(os)) {
+            byte[] data = new byte[BUFFER];
             int count;
             while ((count = is.read(data, 0, BUFFER)) != -1) {
                 gos.write(data, 0, count);
             }
-        } finally {
-            IOUtils.closeQuietly(gos);
         }
-
     }
 
     public static void decompress(InputStream is, OutputStream os) throws IOException {
-        GZIPInputStream gis = null;
-
-        try {
-            gis = new GZIPInputStream(is);
+        try (GZIPInputStream gis = new GZIPInputStream(is)) {
             byte[] data = new byte[BUFFER];
             int count;
             while ((count = gis.read(data, 0, BUFFER)) != -1) {
                 os.write(data, 0, count);
             }
-        } finally {
-            IOUtils.closeQuietly(gis);
         }
     }
 }

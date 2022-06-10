@@ -56,7 +56,7 @@
         <protobuf.version>3.16.1</protobuf.version>
         <guava.version>23.0</guava.version>
         <!--rpc-->
-        <dubbo.version>2.6.7</dubbo.version>
+        <dubbo.version>2.6.12</dubbo.version>
         <!--数据库连接池-->
         <druid.version>1.1.9</druid.version>
         <hikari.version>3.4.2</hikari.version>

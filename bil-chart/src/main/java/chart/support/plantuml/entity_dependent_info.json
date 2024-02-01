@@ -1,0 +1,35 @@
+[
+  {
+    "entityName": "StatisticData2YC",
+    "entityDesc": "推送业务汇总的数据",
+    "color": "#red",
+    "dependents": [
+      {
+        "entityName": "fund_receipt_refund_statistic",
+        "relationDesc": "StatisticData2YCTask"
+      },
+      {
+        "entityName": "fund_paid_statistic",
+        "relationDesc": "StatisticData2YCTask"
+      },
+      {
+        "entityName": "fund_recharge_statistic",
+        "relationDesc": "StatisticData2YCTask"
+      }
+    ]
+  },
+  {
+    "entityName": "fund_receipt_refund_statistic",
+    "entityDesc": "收退汇总数据",
+    "dependents": [
+      {
+        "entityName": "bill",
+        "relationDesc": "TradeStatisticsTask"
+      },
+      {
+        "entityName": "diff",
+        "relationDesc": "TradeStatisticsTask"
+      }
+    ]
+  }
+]

@@ -94,6 +94,8 @@
         <objenesis.version>2.1</objenesis.version>
         <cglib.version>3.1</cglib.version>
         <lombok.version>1.18.12</lombok.version>
+        <hutool-all.version>5.8.9</hutool-all.version>
+        <swagger.version>1.5.10</swagger.version>
         <!-- 字节码操作 -->
         <javassist.version>3.26.0-GA</javassist.version>
         <!-- http -->
@@ -108,7 +110,9 @@
 
         <!-- 分布式配置 -->
 
-
+        <!--代码生成图片-->
+        <plantuml.version>1.2022.5</plantuml.version>
+        <graphviz.version>0.18.1</graphviz.version>
     </properties>
 
     <!--管理jar包-->
@@ -496,6 +500,30 @@
                 <version>${aviator.version}</version>
             </dependency>
 
+            <!-- 代码生成图片 -->
+            <dependency>
+                <groupId>net.sourceforge.plantuml</groupId>
+                <artifactId>plantuml</artifactId>
+                <version>${plantuml.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>guru.nidi</groupId>
+                <artifactId>graphviz-java</artifactId>
+                <version>${graphviz.version}</version>
+            </dependency>
+
+            <!--工具包-->
+            <dependency>
+                <groupId>cn.hutool</groupId>
+                <artifactId>hutool-all</artifactId>
+                <version>${hutool-all.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.swagger</groupId>
+                <artifactId>swagger-core</artifactId>
+                <version>${swagger.version}</version>
+            </dependency>
         </dependencies>
     </dependencyManagement>
 
